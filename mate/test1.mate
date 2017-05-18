@@ -4,8 +4,10 @@ mate A
     int b;
     A()
     {
+        auto fff=function(){""};
         auto f=function(){
             int a=0;
+            string b="function 254";
         }
 
         this.a=5;

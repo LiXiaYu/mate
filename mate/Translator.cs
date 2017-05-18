@@ -20,11 +20,48 @@ namespace Mate
 
         public string Translate(string text)
         {
-            string cppt = text;
-            foreach(var r in this.ReplaceList)
+            bool strClock = false;
+            List<char> tcs = new List<char>();
+            string cppt = "";
+            string tss = "";
+            for (int i=0;i<text.Length;i++)
             {
-                cppt= Regex.Replace(cppt, r.Item1, r.Item2);
+                tcs.Add(text[i]);
+                //String Exception Principle
+                if (text[i]=='\"')
+                {
+                    if(strClock==false)
+                    {
+                        tcs.RemoveAt(tcs.Count - 1);
+                        tss = new String(tcs.ToArray());
+                        foreach (var r in this.ReplaceList)
+                        {
+                            tss = Regex.Replace(tss, r.Item1, r.Item2);
+                        }
+                        cppt += tss+"\"";
+
+                        strClock = true;
+                        tcs.Clear();
+                    }
+                    else
+                    {
+                        tss = new String(tcs.ToArray());
+                        cppt += tss;
+
+                        strClock = false;
+                        tcs.Clear();
+                    }
+                }
             }
+            tss = new String(tcs.ToArray());
+            foreach (var r in this.ReplaceList)
+            {
+                tss = Regex.Replace(tss, r.Item1, r.Item2);
+            }
+            cppt += tss;
+
+            strClock = true;
+            tcs.Clear();
 
             return cppt;
         }
