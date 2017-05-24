@@ -1,3 +1,6 @@
+# v0.0.4.20170524
+#### README be a Document
+
 # v0.0.3.20170524
 #### Interface 
 ##### interface to class with virtual func()=0
