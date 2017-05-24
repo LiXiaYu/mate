@@ -13,4 +13,24 @@ class A
         this->a=5;
         this->b=6;
     }
-}
+};
+
+class IGay
+{
+public:
+    virtual void las()=0;
+};
+
+class GayChen:B,  
+ public IGay   ,A
+{
+    void las()
+    {
+        char* chen="laji Gay Chen...prpr...";
+    }
+};
+
+class Fengfeng:GayChen
+{
+
+};

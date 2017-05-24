@@ -18,6 +18,7 @@ namespace mate
             Translator t = new Translator();
 
             text = t.Translate(text);
+            text = t.InterfaceBuild(text);
 
             System.IO.File.WriteAllText(outputFile, text);
 

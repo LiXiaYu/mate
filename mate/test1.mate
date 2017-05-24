@@ -13,4 +13,23 @@ mate A
         this.a=5;
         this.b=6;
     }
-}
+};
+
+interface IGay
+{
+    void las();
+};
+
+mate GayChen:B,  
+ IGay   ,A
+{
+    void las()
+    {
+        char* chen="laji Gay Chen...prpr...";
+    }
+};
+
+mate Fengfeng:GayChen
+{
+
+};
