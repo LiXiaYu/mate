@@ -40,7 +40,7 @@ auto f=function(){
     string b="function 254";
 };
 ##### to
-auto f=[&](){
+auto f=\[&\](){
     int a=0;
     string b="function 254";
 };
