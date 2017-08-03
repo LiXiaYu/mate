@@ -1,4 +1,4 @@
-mate A
+/*Good Mate is a good class*/mate A
 {
     int a;
     int b;
@@ -15,6 +15,13 @@ mate A
     }
 };
 
+//Laji GayChen interface
+//mate B
+//{
+//};
+//
+//
+//
 interface IGay
 {
     void las();
@@ -33,3 +40,15 @@ mate Fengfeng:GayChen
 {
 
 };
+//hehe
+interface IPa
+{
+	void papa();
+};
+
+mate Mim:IGay,IPa
+{
+};
+/*dssfsa*/
+mate Lou:IPa,IGay
+{};

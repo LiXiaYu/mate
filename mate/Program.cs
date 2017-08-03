@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Mate;
+using System.Collections.Generic;
 
 namespace mate
 {
@@ -14,13 +15,23 @@ namespace mate
             Console.WriteLine("Hello World!");
 
             string text = System.IO.File.ReadAllText(inputFile);
+            
+            List<string> ts = Translator.Split(text, "/*", "*/");
+            List<string> tss = Translator.Split(text, "//", "\n");
+
+
 
             Translator t = new Translator();
 
-            text = t.Translate(text);
-            text = t.InterfaceBuild(text);
+            text=t.Translate_new(text);
+
+            //text = t.Translate(text);
+            //text = t.InterfaceBuild(text);
+
+
 
             System.IO.File.WriteAllText(outputFile, text);
+
 
         }
     }
